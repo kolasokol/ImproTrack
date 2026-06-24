@@ -10,11 +10,7 @@ export function Footer() {
     <footer className="border-t border-black/[0.06] bg-white/80 backdrop-blur-2xl">
       <div className="page-shell flex flex-col gap-4 py-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-2">
-          <img
-            src="/logo.svg"
-            alt="ImproTrack"
-            className="h-6 w-6"
-          />
+          <img src="/logo.svg" alt="ImproTrack" className="h-6 w-6" />
           <span className="text-[13px] font-medium text-ink-700">
             ImproTrack
           </span>
@@ -54,7 +50,7 @@ export function Footer() {
         </div>
         <div className="flex items-center gap-2 sm:justify-end">
           <a
-            href="https://github.com/dedkola/ImproTrack"
+            href="https://github.com/kolasokol/ImproTrack"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub repository"
