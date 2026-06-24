@@ -1,0 +1,58 @@
+"use client";
+
+import Link from "next/link";
+import { PublicPageShell } from "@/components/public-page-shell";
+import { useTranslation } from "@/components/i18n-provider";
+
+export function OfflineFallbackPage() {
+  const { t } = useTranslation();
+  const offlineNotes = [
+    t("offline_note_1"),
+    t("offline_note_2"),
+    t("offline_note_3"),
+  ];
+
+  return (
+    <PublicPageShell width="standard">
+      <section className="page-shell mx-auto max-w-4xl py-16 sm:py-20">
+        <div className="public-hero-panel rounded-[32px] px-6 py-8 sm:px-8 sm:py-10">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-ink-600">
+            {t("offline_label")}
+          </p>
+          <h1 className="mt-3 font-display text-[34px] font-semibold tracking-tight text-ink-950 sm:text-[46px]">
+            {t("offline_title")}
+          </h1>
+          <p className="mt-4 max-w-2xl text-[15px] leading-7 text-ink-700 sm:text-[16px] sm:leading-8">
+            {t("offline_desc")}
+          </p>
+
+          <ul className="mt-6 space-y-3 text-left">
+            {offlineNotes.map((note) => (
+              <li
+                key={note}
+                className="rounded-2xl border border-black/[0.06] bg-white/92 px-4 py-3 text-[14px] leading-6 text-ink-700 shadow-[var(--shadow-card)]"
+              >
+                {note}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/dashboard"
+              className="pill-btn inline-flex min-h-11 items-center justify-center rounded-xl bg-ink-950 px-5 py-3 text-[15px] font-semibold text-white shadow-[0_10px_24px_rgba(10,22,40,0.16)]"
+            >
+              {t("home_open_dashboard")}
+            </Link>
+            <Link
+              href="/"
+              className="pill-btn inline-flex min-h-11 items-center justify-center rounded-xl border border-black/[0.06] bg-white px-5 py-3 text-[15px] font-semibold text-ink-950 shadow-[var(--shadow-card)]"
+            >
+              {t("auth_back_home")}
+            </Link>
+          </div>
+        </div>
+      </section>
+    </PublicPageShell>
+  );
+}
